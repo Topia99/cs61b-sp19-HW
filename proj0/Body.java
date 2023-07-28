@@ -12,12 +12,12 @@ public class Body{
     
     /**
      * Constructor of class Body that set value for all instance variable.
-     * @param xP
-     * @param yP
-     * @param xV
-     * @param yV
-     * @param m
-     * @param img
+     * @param xP x-coordinate position
+     * @param yP y-coordinate position
+     * @param xV x-coordinate velocity
+     * @param yV y-coordinate velocity
+     * @param m mass of the object
+     * @param img image file name
      */
     public Body(double xP, double yP, double xV, double yV, double m, String img){
         xxPos = xP;
@@ -110,5 +110,25 @@ public class Body{
         double Fy = (this.calcForceExertedBy(b) * dy) / this.calcDistance(b);
 
         return Fy;
+                    }
+                
+     /**
+     * Update Body's velocity and position in a small period of time dt
+     * @param dt time of the movement
+     * @param fx x-force
+     * @param fy y-force
+     */
+    public void update(double dt, double fx, double fy){
+        // 1. Calculate the acceleration using provided x- and y-force.
+        double ax = fx / mass;
+        double ay = fy / mass;
+
+        // 2. Calculate new velocity by using the ax ay and current velocity
+        xxVel = xxVel + (dt * ax);
+        yyVel = yyVel + (dt * ay);
+
+        // 3. Calculate new Position
+        xxPos = xxPos + (dt * xxVel);
+        yyPos = yyPos + (dt * yyVel);
     }
 }
