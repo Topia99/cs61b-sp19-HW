@@ -38,6 +38,4 @@ public class testBody {
         checkEquals(ball.calcForceExertedBy(acorn), 1.6675e-8, "CheckBody", 0.01);
 
     }
-
-
 }
