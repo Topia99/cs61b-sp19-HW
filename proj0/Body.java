@@ -110,7 +110,7 @@ public class Body{
         double Fy = (this.calcForceExertedBy(b) * dy) / this.calcDistance(b);
 
         return Fy;
-                    }
+    }
                 
      /**
      * Update Body's velocity and position in a small period of time dt
