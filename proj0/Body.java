@@ -131,4 +131,11 @@ public class Body{
         xxPos = xxPos + (dt * xxVel);
         yyPos = yyPos + (dt * yyVel);
     }
+
+    /**
+     * Draw body in the university with its position
+     */
+    public void draw(){
+        StdDraw.picture(xxPos, yyPos, imgFileName);
+    }
 }
