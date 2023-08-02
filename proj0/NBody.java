@@ -77,6 +77,9 @@ public class NBody {
             // Set time to 0
             double time = 0;
 
+            //play music
+            StdAudio.play("audio/2001.mid");
+
             // Continue bodies motion until time reach T
             int n = Bodies.length;
             while (time < T){
